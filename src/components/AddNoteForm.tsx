@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,8 +8,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+} from "../components/ui/dialog";
+import { Input } from "../components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
@@ -18,7 +18,11 @@ interface AddNoteFormProps {
 }
 
 export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
-  const [newNote, setNewNote] = useState({ title: "", body: "", id: +new Date() });
+  const [newNote, setNewNote] = useState({
+    title: "",
+    body: "",
+    id: +new Date(),
+  });
   const maxTitleLength = 50;
 
   const handleInputChange = (
